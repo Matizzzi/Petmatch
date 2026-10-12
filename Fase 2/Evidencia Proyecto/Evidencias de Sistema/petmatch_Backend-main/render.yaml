@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: petmatch-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        value: postgresql://USER:PASSWORD@HOST/DB
+      - key: JWT_SECRET
+        value: JWT_SECRET
+      - key: GEMINI_API_KEY
+        value: GEMINI_API_KEY
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 43200
