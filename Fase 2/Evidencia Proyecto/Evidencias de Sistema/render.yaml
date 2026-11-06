@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: petmatch-backend
+    runtime: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./petmatch_Backend-main/Dockerfile
+    dockerContext: ./petmatch_Backend-main
+    healthCheckPath: /
+    envVars:
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ALGORITHM
+        value: HS256
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: 43200
+      - key: PORT
+        value: 8000

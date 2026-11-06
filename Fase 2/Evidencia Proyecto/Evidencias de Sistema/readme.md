@@ -1,24 +1,34 @@
 # PetMatch — Evidencias de Sistema (Fase 2)
 
-Avance de **PetMatch** para la fase 2 del ramo: frontend y backend al **~50%**. App para reportar mascotas perdidas, avistamientos y matching con apoyo de IA.
+Frontend (Expo) y backend (FastAPI) de PetMatch: reportes de mascotas perdidas, avistamientos, matching heurístico y análisis de fotos con IA.
 
-## Cómo correrlo
+## Seguridad
 
-1. Copia las variables de entorno (las claves van solo en `.env`, **no se suben**):
+Las claves **no van en GitHub**. Copia la plantilla y completa tus valores locales:
 
 ```bash
 copy .env.example .env
 ```
 
-2. Completa en `.env` `DATABASE_URL`, `JWT_SECRET` y `GEMINI_API_KEY`.
+En `.env` define al menos:
 
-3. Levanta el stack:
+- `DATABASE_URL`
+- `JWT_SECRET`
+- `GROQ_API_KEY` (opcional, para Analizar con IA; plan Free en https://console.groq.com/keys)
+
+`GEMINI_API_KEY` es opcional. Si no hay ninguna clave de visión, el backend usa un análisis local de pelaje.
+
+## Cómo correrlo
+
+1. Instala Docker Desktop.
+2. En esta carpeta: `copy .env.example .env` y completa las variables.
+3. En Windows puedes usar `iniciar.bat`, o en terminal:
 
 ```bash
 docker compose up --build
 ```
 
-Por defecto la base es **Neon** (nube). Postgres local solo se inicia con:
+Postgres local (opcional):
 
 ```bash
 docker compose --profile local-db up --build
@@ -26,6 +36,10 @@ docker compose --profile local-db up --build
 
 ## Puertos
 
-- Frontend: http://localhost:3000
-- Backend: http://localhost:8000
-- pgAdmin: http://localhost:5050
+| Servicio | URL |
+| :--- | :--- |
+| Frontend | http://localhost:3000 |
+| Backend / Swagger | http://localhost:8000/docs |
+| pgAdmin | http://localhost:5050 |
+
+pgAdmin local: `admin@petmatch.com` / `admin` (solo desarrollo).
