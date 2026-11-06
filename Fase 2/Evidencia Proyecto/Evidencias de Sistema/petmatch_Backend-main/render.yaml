@@ -9,11 +9,13 @@ services:
     healthCheckPath: /
     envVars:
       - key: DATABASE_URL
-        value: postgresql://USER:PASSWORD@HOST/DB
+        sync: false
       - key: JWT_SECRET
-        value: JWT_SECRET
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
       - key: GEMINI_API_KEY
-        value: GEMINI_API_KEY
+        sync: false
       - key: ALGORITHM
         value: HS256
       - key: ACCESS_TOKEN_EXPIRE_MINUTES
