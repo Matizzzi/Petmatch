@@ -211,17 +211,16 @@ Tablas: `usuarios`, `mascotas`, `alertas_perdida`, `reportes_avistamiento`, `mat
 
 ---
 
-## 9. App en el celular (opcional, no requerido para la comisión)
+## 9. App en el celular 
 
-La comisión puede evaluar todo en el navegador (`localhost:3000`).
+
 
 - **Android APK**: se genera con EAS desde `petmatch_Front-main` (hace falta cuenta Expo). El APK de producción apunta a `https://petmatch-backend-japt.onrender.com`.  
-- **iPhone**: el mismo código corre en **Expo Go** (gratis). No hay IPA sin cuenta Apple Developer paga.  
-- En la red local, la API tiene que ser la IP de la PC, no `localhost` (el teléfono no ve el localhost del notebook).
+
 
 ---
 
-## 10. Producción (referencia, no hace falta el día de la defensa)
+## 10. Producción 
 
 - API: Render (`petmatch-backend`, Docker).  
 - Datos: Neon (Postgres). En local, Docker Postgres reemplaza a Neon.  
